@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade</title>
+</head>
+<!--PARTE DE ESTILO (CSS) ABAIXO -->
+<!--==============================================-->
+    <style>
+        .caixa{
+            border: 5px solid #000;
+            width: 400px;
+            height: 475px;
+            background: #ffbb00;
+            
+        }
+        button{
+            font-size: 50px;
+            width: 75px;
+            height: 75px;
+            background: rgb(132, 219, 132);
+        }
+        input{
+            background: #fff;
+            margin-top: 5px;
+            margin-left: 5px;
+            width: 375px;
+            height: 50px;
+            border: 5px solid #000;
+            font-size: 20px;
+        }
+        .op{
+            font-size: 30px;
+            width: 75px;
+            height: 75px;
+            background: rgb(208, 248, 208);  
+        }
+
+
+
+    </style>
+<!--PARTE DE HTML ABAIXO -->
+<!--==============================================-->
+<body>
+
+    <div  class="caixa">
+        
+        <input 
+         id="resultado"
+         type="text"
+         placeholder="0"
+         disabled="disabled" />
+       
+       
+        <p></p>
+       <div style="text-align: center;">
+        
+        <button 
+        onclick="calcular('valor',0)"
+        type="button"> 0 </button>
+        
+        <button 
+        onclick="calcular('valor',1)"
+        type="button"> 1 </button>
+        
+        <button 
+        onclick="calcular('valor',2)"
+        type="button"> 2 </button>    
+        
+        <button 
+        onclick="calcular('valor',3)"
+        type="button"> 3 </button>
+       
+        <button 
+        onclick="calcular('valor',4)"
+        type="button"> 4 </button>
+      
+        <button 
+        onclick="calcular('valor',5)"
+        type="button"> 5 </button>    
+       
+        <button 
+        onclick="calcular('valor',6)"
+        type="button"> 6 </button>
+        
+        <button 
+        onclick="calcular('valor',7)"
+        type="button"> 7 </button>
+        
+        <button 
+        onclick="calcular('valor',8)"
+        type="button"> 8 </button>
+        
+        <button 
+        onclick="calcular('valor',9)"
+        type="button"> 9 </button>
+       
+        <button 
+        onclick="calcular('acao','/')"
+        type="button"> / </button>
+        
+        <button 
+        onclick="calcular('acao','*')"
+        type="button"> * </button>
+        
+        <button 
+        onclick="calcular('acao','+')"
+        type="button"> + </button>
+        
+        <button 
+        onclick="calcular('acao','-')"
+        type="button"> - </button>
+        
+        <button 
+        onclick="calcular('acao','=')"
+        type="button"> = </button>
+        
+        <button 
+        onclick="calcular('acao','.')"
+        type="button"> . </button>
+       
+        <button 
+        style="width: 154px;"
+        type="button"
+        onclick="calcular('acao','c')"
+        > Clear </button>
+  
+       </div>
+
+    </div>
+
+</body>
+
+    <!--PARTE DE SCRIPT ABAIXO -->
+<!--==============================================-->
+<script>
+function calcular(tipo,valor){
+
+    if(tipo === 'acao'){
+        
+        if(valor === 'c'){
+            document.getElementById('resultado').value = ''
+         }
+
+         if(valor === '+' || valor === '-' || valor === '/' || valor === '*' || valor === '.'){
+             document.getElementById('resultado').value += valor
+         }
+
+         if(valor === '='){
+            
+          var resul = eval(document.getElementById('resultado').value) 
+            document.getElementById('resultado').value = resul               
+    }
+
+    }else
+    if(tipo === 'valor'){
+        document.getElementById('resultado').value += valor
+
+    }
+}
+</script>
+<!--==============================================-->
+
+</html>
